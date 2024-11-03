@@ -1,5 +1,5 @@
 import { MongoClient } from 'mongodb'; 
-import { getEmbedding } from '../generating/getEmbeddings.js';
+import { getEmbedding } from '../embeddings/generating/getEmbeddings.js';
 import dotenv from "dotenv";
 
 dotenv.config();
