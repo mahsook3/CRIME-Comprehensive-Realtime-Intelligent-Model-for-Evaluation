@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.post('/', async (req, res) => {
   try {
-    const { option, crimeInfo } = req.body;
+    const { option, crimeInfo, translate: shouldTranslate } = req.body;
     if (!option) {
       return res.status(400).json({ error: "Missing option parameter" });
     }
@@ -15,18 +15,22 @@ router.post('/', async (req, res) => {
       return res.status(400).json({ error: "Missing crimeInfo parameter" });
     }
 
-    const translatedCrimeInfo = await translate('translate', crimeInfo);
-    let results;
+    let processedCrimeInfo = crimeInfo;
+    if (shouldTranslate === 1) {
+      const translatedCrimeInfo = await translate('translate', crimeInfo);
+      processedCrimeInfo = translatedCrimeInfo.translated_content;
+    }
 
+    let results;
     if (option === 'search') {
-      results = await search(translatedCrimeInfo.translated_content);
+      results = await search(processedCrimeInfo);
     } else if (option === 'predict') {
-      results = await predict(translatedCrimeInfo.translated_content);
+      results = await predict(processedCrimeInfo);
     } else {
       return res.status(400).json({ error: "Invalid option parameter" });
     }
 
-    console.log("Here is crimeInfo: ", crimeInfo, "Here is translatedCrimeInfo: ", translatedCrimeInfo.translated_content);
+    console.log("Here is crimeInfo: ", crimeInfo, "Here is processedCrimeInfo: ", processedCrimeInfo);
     res.json({ results });
   } catch (error) {
     res.status(500).json({ error: "Error during processing" });
