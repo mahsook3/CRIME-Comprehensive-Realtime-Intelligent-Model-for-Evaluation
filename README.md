@@ -30,7 +30,7 @@ The CRIME model processes crime information through a multimodal multilingual co
 ```mermaid
 flowchart TD
     A[Input Complaint] -->|Multilingual Text| B{Is Translation Needed?}
-    B -->|Yes| C[Multilingual System]
+    B -->|Yes| C[Multilingual System - Bhashini (It is an Indian government project developed by Ministry of Electronics and Information Technology under its "National Language Translation Mission.)]
     B -->|No| D[Preprocessing]
     C --> D
     D --> E[Information Extraction]
