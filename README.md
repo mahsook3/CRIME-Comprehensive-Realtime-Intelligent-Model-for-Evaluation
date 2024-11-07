@@ -29,17 +29,21 @@ The CRIME model processes crime information through a multimodal multilingual co
 ## Flowchart
 ```mermaid
 flowchart TD
-    A[Start] --> B[Input Complaint]
-    B --> C[Multilingual System]
-    C --> D[Preprocessing]
+    A[Input Complaint] -->|Multilingual Text| B{Is Translation Needed?}
+    B -->|Yes| C[Multilingual System]
+    B -->|No| D[Preprocessing]
+    C --> D
     D --> E[Information Extraction]
     E --> F[Vectorization]
     F --> G[Semantic Search]
     G --> H[Similarity Measurement]
     H --> I[Search Optimization]
     I --> J[Categorization & Classification]
-    J --> K[Output Results]
-    K --> L[End]
+    J --> K{Is Summary Report Needed?}
+    K -->|Yes| L[Generate Summary Report]
+    K -->|No| M[Output Results]
+    L --> M
+    M --> N[End]
 ```
 
 
