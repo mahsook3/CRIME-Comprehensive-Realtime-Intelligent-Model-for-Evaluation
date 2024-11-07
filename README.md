@@ -4,10 +4,11 @@ The CRIME model processes crime information through a multimodal multilingual co
 
 ### Approaches Used:
 1. **Semantic Search**
-2. **Euclidean Similarity**: Measures the distance between ends of vectors. This value allows you to measure similarity based on varying dimensions. For Euclidean similarity, Atlas Vector Search uses the following algorithm to normalize the score to ensure a value between 0 and 1:
-   \[
+2. **Euclidean Similarity**: Measures the distance between ends of vectors. This allows similarity measurement based on varying dimensions. For Euclidean similarity, Atlas Vector Search uses the following algorithm to normalize the score to ensure a value between 0 and 1:
+   
+   ```math
    \text{score} = \frac{1}{1 + \text{euclidean}(v1, v2)}
-   \]
+   ```
 3. **Multimodal Multilingual Conversational System**
 4. **Hierarchical Navigable Small Worlds (HNSW)**
 5. **Exact Nearest Neighbor (ENN) and Approximate Nearest Neighbor (ANN)**
