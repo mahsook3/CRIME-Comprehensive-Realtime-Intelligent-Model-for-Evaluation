@@ -15,7 +15,6 @@ The CRIME model processes crime information through a multimodal multilingual co
    \text{score} = \frac{1}{1 + \text{euclidean}(v1, v2)}
    ```
 
-
 8. **Search Optimization**: Apply Hierarchical Navigable Small Worlds (HNSW) for efficient search, and use Exact Nearest Neighbor (ENN) and Approximate Nearest Neighbor (ANN) methods to balance speed and accuracy.
 9. **Categorization & Classification**: Assign the complaint to a specific category based on similarity analysis and store the result in a database for record-keeping and further reference.
 10. **Output Results**: Display the final categorized output and generate a summary report if required for user review or administrative purposes.
@@ -72,31 +71,13 @@ npm start
 ```
 This will start the server and make the endpoints available at `http://localhost:5000`
 
-### 1. Similarity Search
-- **Endpoint**: `/search`
-- **Description**: Finds cases similar to a given complaint based on vector similarity.
-- **Implementation**: [endpoints/similaritySearch.js](endpoints/similaritySearch.js)
-
-### 2. Predict
-- **Endpoint**: `/predict`
-- **Description**: Categorizes a single complaint and returns the predicted category.
-- **Implementation**: [endpoints/predictEndpoint.js](endpoints/predictEndpoint.js)
-
-### 3. Predict Bulk
-- **Endpoint**: `/predictFile`
-- **Description**: Processes and categorizes multiple complaints in bulk.
-- **Implementation**: [endpoints/predictFileEndpoint.js](endpoints/predictFileEndpoint.js)
-
-### 4. Translate
-- **Endpoint**: `/translate`
-- **Description**: Translates text to the desired language.
-- **Implementation**: [endpoints/translateEndpoint.js](endpoints/translateEndpoint.js)
-
-### 5. Quick Demo
-- **Endpoint**: `/demo`
-- **Description**: Provides a quick demonstration of the model's capabilities.
-- **Implementation**: [endpoints/forQuickDemo.js](endpoints/forQuickDemo.js)
-
+| Feature          | Endpoint       | Description                                                                 | Implementation                                      |
+|------------------|----------------|-----------------------------------------------------------------------------|------------------------------------------------------|
+| Similarity Search| `/search`      | Finds cases similar to a given complaint based on vector similarity.        | [endpoints/similaritySearch.js](endpoints/similaritySearch.js) |
+| Predict          | `/predict`     | Categorizes a single complaint and returns the predicted category.          | [endpoints/predictEndpoint.js](endpoints/predictEndpoint.js)   |
+| Predict Bulk     | `/predictFile` | Processes and categorizes multiple complaints in bulk.                      | [endpoints/predictFileEndpoint.js](endpoints/predictFileEndpoint.js) |
+| Translate        | `/translate`   | Translates text to the desired language.                                    | [endpoints/translateEndpoint.js](endpoints/translateEndpoint.js) |
+| Quick Demo       | `/demo`        | Provides a quick demonstration of the model's capabilities.                 | [endpoints/forQuickDemo.js](endpoints/forQuickDemo.js) |
 
 ## Flowchart
 
