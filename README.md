@@ -10,9 +10,12 @@ The CRIME model processes crime information through a multimodal multilingual co
 5. **Vectorization**: Convert the extracted information into vector representations to facilitate similarity comparison.
 6. **Semantic Search**: Utilize advanced algorithms to perform a semantic match against predefined complaint categories, identifying relevant types based on meaning and context.
 7. **Similarity Measurement**: Use Euclidean distance to measure the similarity between complaint data and predefined categories, ensuring a normalized score between 0 and 1 using the formula:
-   \[
+   
+   ```math
    \text{score} = \frac{1}{1 + \text{euclidean}(v1, v2)}
-   \]
+   ```
+
+
 8. **Search Optimization**: Apply Hierarchical Navigable Small Worlds (HNSW) for efficient search, and use Exact Nearest Neighbor (ENN) and Approximate Nearest Neighbor (ANN) methods to balance speed and accuracy.
 9. **Categorization & Classification**: Assign the complaint to a specific category based on similarity analysis and store the result in a database for record-keeping and further reference.
 10. **Output Results**: Display the final categorized output and generate a summary report if required for user review or administrative purposes.
