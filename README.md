@@ -12,6 +12,33 @@ The CRIME model processes crime information through a multimodal multilingual co
 4. **Hierarchical Navigable Small Worlds (HNSW)**
 5. **Exact Nearest Neighbor (ENN) and Approximate Nearest Neighbor (ANN)**
 
+## Project Structure
+
+- **.env**
+- **.gitignore**
+- **endpoints/**
+  - **forQuickDemo.js**
+  - **predictEndpoint.js**
+  - **predictFileEndpoint.js**
+  - **similaritySearch.js**
+  - **translateEndpoint.js**
+- **index.js**
+- **package.json**
+- **pipeline/**
+  - **embeddings/**
+    - **establisher/**
+      - **createIndex.js**
+    - **generating/**
+      - **getEmbeddings.js**
+  - **models/**
+    - **predictFileModel.js**
+    - **predictModel.js**
+    - **similaritySearchModel.js**
+    - **testModel.js**
+    - **trainModel.js**
+  - **translator/**
+    - **translationService.js**
+
 ## Flowchart
 
 ```mermaid
@@ -39,3 +66,4 @@ flowchart TD
 - **Predict**: Endpoint for categorizing a single complaint and returning the predicted category.
 - **Search Similar Case**: Endpoint for finding cases similar to a given complaint based on vector similarity.
 - **Predict Bulk**: Endpoint for processing and categorizing multiple complaints in bulk.
+
