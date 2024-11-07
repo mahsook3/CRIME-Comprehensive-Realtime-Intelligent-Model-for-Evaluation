@@ -39,6 +39,56 @@ The CRIME model processes crime information through a multimodal multilingual co
 - index.js
 ```
 
+
+## Workflow
+### 1. Text Preprocessing
+- **Tokenization**: Splitting text into individual words or tokens.
+- **Stop Word Removal**: Removing common words that do not contribute to the meaning.
+- **Stemming**: Reducing words to their base or root form.
+- **Text Cleaning**: Removing special characters, numbers, and other irrelevant data.
+
+### 2. Model Development
+- **Embedding Generation**: Using the `getEmbedding` function in [pipeline/embeddings/generating/getEmbeddings.js](pipeline/embeddings/generating/getEmbeddings.js) to convert text into numerical vectors.
+- **Index Creation**: Creating a vector index using the `createIndex` function in [pipeline/embeddings/establisher/createIndex.js](pipeline/embeddings/establisher/createIndex.js).
+- **Model Training**: Training the model using the `trainModel` in [pipeline/models/trainModel.js](pipeline/models/trainModel.js).
+
+### 3. Accuracy Measurement
+- **Evaluation Metrics**: Using metrics such as accuracy, precision, recall, and F1-score to evaluate the model's performance.
+
+## Endpoints
+### Running the Project
+To run the project, use the following command:
+```
+npm start
+```
+This will start the server and make the endpoints available at http://localhost:5000.
+
+### 1. Similarity Search
+- **Endpoint**: `/search`
+- **Description**: Finds cases similar to a given complaint based on vector similarity.
+- **Implementation**: [endpoints/similaritySearch.js](endpoints/similaritySearch.js)
+
+### 2. Predict
+- **Endpoint**: `/predict`
+- **Description**: Categorizes a single complaint and returns the predicted category.
+- **Implementation**: [endpoints/predictEndpoint.js](endpoints/predictEndpoint.js)
+
+### 3. Predict Bulk
+- **Endpoint**: `/predictFile`
+- **Description**: Processes and categorizes multiple complaints in bulk.
+- **Implementation**: [endpoints/predictFileEndpoint.js](endpoints/predictFileEndpoint.js)
+
+### 4. Translate
+- **Endpoint**: `/translate`
+- **Description**: Translates text to the desired language.
+- **Implementation**: [endpoints/translateEndpoint.js](endpoints/translateEndpoint.js)
+
+### 5. Quick Demo
+- **Endpoint**: `/demo`
+- **Description**: Provides a quick demonstration of the model's capabilities.
+- **Implementation**: [endpoints/forQuickDemo.js](endpoints/forQuickDemo.js)
+
+
 ## Flowchart
 
 ```mermaid
