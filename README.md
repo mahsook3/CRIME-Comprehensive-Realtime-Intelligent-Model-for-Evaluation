@@ -61,7 +61,7 @@ To run the project, use the following command:
 ```
 npm start
 ```
-This will start the server and make the endpoints available at http://localhost:5000.
+This will start the server and make the endpoints available at `http://localhost:5000`
 
 ### 1. Similarity Search
 - **Endpoint**: `/search`
