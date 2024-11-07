@@ -3,15 +3,20 @@
 The CRIME model processes crime information through a multimodal multilingual conversational system to translate it, extract the victim, type of fraud, and other relevant information, and convert the extracted crime information into a vector.
 
 ### Approaches Used:
-1. **Semantic Search**
-2. **Euclidean Similarity**: Measures the distance between ends of vectors. This allows similarity measurement based on varying dimensions. For Euclidean similarity, Atlas Vector Search uses the following algorithm to normalize the score to ensure a value between 0 and 1:
-   
-   ```math
+1. **Input Complaint**: Accept complaint data in multilingual text format from users for processing.
+2. **Multilingual System**: Translate text to a common language (if needed) for consistent processing using a multimodal multilingual system.
+3. **Preprocessing**: Clean and prepare the text using tokenization, stopword removal, and lemmatization to standardize the input for further analysis.
+4. **Information Extraction**: Extract critical parameters, such as victim type, fraud type, and any additional relevant context using NLP techniques like named entity recognition and dependency parsing.
+5. **Vectorization**: Convert the extracted information into vector representations to facilitate similarity comparison.
+6. **Semantic Search**: Utilize advanced algorithms to perform a semantic match against predefined complaint categories, identifying relevant types based on meaning and context.
+7. **Similarity Measurement**: Use Euclidean distance to measure the similarity between complaint data and predefined categories, ensuring a normalized score between 0 and 1 using the formula:
+   \[
    \text{score} = \frac{1}{1 + \text{euclidean}(v1, v2)}
-   ```
-3. **Multimodal Multilingual Conversational System**
-4. **Hierarchical Navigable Small Worlds (HNSW)**
-5. **Exact Nearest Neighbor (ENN) and Approximate Nearest Neighbor (ANN)**
+   \]
+8. **Search Optimization**: Apply Hierarchical Navigable Small Worlds (HNSW) for efficient search, and use Exact Nearest Neighbor (ENN) and Approximate Nearest Neighbor (ANN) methods to balance speed and accuracy.
+9. **Categorization & Classification**: Assign the complaint to a specific category based on similarity analysis and store the result in a database for record-keeping and further reference.
+10. **Output Results**: Display the final categorized output and generate a summary report if required for user review or administrative purposes.
+11. **End Process**: Complete the categorization and classification process, preparing the system for the next input.
 
 
 ## Project Structure
