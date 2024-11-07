@@ -1,18 +1,4 @@
-# README
-
-## Problem Statement
-
-**Development of an NLP Model for Text Analytics and Classification**
-
-### Objective:
-- To develop an NLP model that categorizes complaints based on victim, type of fraud, and other relevant parameters used for text classification and preparing the final model.
-
-### Outputs:
-- **Text Preprocessing**: Tokenization, stop word removal, stemming, and text cleaning to prepare data.
-- **Model Development**: Selection of a suitable NLP model for text classification.
-- **Accuracy Measurement**: Evaluate the model based on metrics such as accuracy, precision, recall, and F1-score.
-
-## Solution: CRIME (Comprehensive Real-time Intelligent Model for Evaluation)
+# CRIME (Comprehensive Real-time Intelligent Model for Evaluation)
 
 The CRIME model processes crime information through a multimodal multilingual conversational system to translate it, extract the victim, type of fraud, and other relevant information, and convert the extracted crime information into a vector.
 
